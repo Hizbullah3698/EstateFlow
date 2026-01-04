@@ -1,75 +1,90 @@
-# React + TypeScript + Vite
+EstateFlow – Premium Dubai Real Estate Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EstateFlow is a modern, AI-enabled real estate dashboard designed for the Dubai property market. The platform focuses on performance, usability, and a premium user experience, allowing users to explore, compare, and analyze real estate listings efficiently using real-time data and intelligent assistance.
 
-Currently, two official plugins are available:
+Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AI-Powered Property Assistant
+Integrated with Google Gemini AI, enabling natural language property search, location-based queries, and personalized recommendations.
 
-## React Compiler
+Real-Time Property Listings
+Uses the Bayut API (via RapidAPI) to display live property data for Dubai, ensuring accurate and up-to-date listings.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Premium User Interface
+Built with React 19, Tailwind CSS, and Framer Motion to deliver smooth animations, responsive layouts, and a polished, professional UI.
 
-Note: This will impact Vite dev & build performances.
+Property Comparison Tool
+Allows users to compare multiple properties side by side based on price, size, amenities, and key features.
 
-## Expanding the ESLint configuration
+Generative Data Engine
+Includes a custom data generator to create realistic demo properties, agent profiles, and metadata for development and presentation purposes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Frontend Framework: React 19 + Vite
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Programming Language: TypeScript
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Styling: Tailwind CSS
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Animations: Framer Motion
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+AI Integration: Google Gemini API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+External Data Source: Bayut Property API (RapidAPI)
+
+Icons: Lucide React
+
+Local Setup & Installation
+Prerequisites
+
+Node.js (v18 or higher)
+
+npm (comes with Node.js)
+
+Clone the Repository
+git clone https://github.com/Hizbullah3698/EstateFlow.git
+cd EstateFlow/real-estate-dashboard
+
+Install Dependencies
+npm install
+
+Environment Configuration
+
+Create a .env file in the real-estate-dashboard root directory and add the following:
+
+VITE_RAPIDAPI_KEY=your_bayut_api_key
+VITE_GEMINI_API_KEY=your_gemini_api_key
+
+
+API keys can be obtained from:
+
+RapidAPI (Bayut API)
+
+Google AI Studio (Gemini API)
+
+Run the Development Server
+npm run dev
+
+
+The application will be available at http://localhost:5173.
+
+Build for Production
+npm run build
+
+Project Structure
+
+src/api – API integration and data generation logic
+
+src/components – Reusable UI components
+
+src/context – Global state management (Chat, Favorites, Comparison)
+
+src/services – AI and external service integrations
+
+src/pages – Application routes and main views
+
+Developed by
+Hizbullah
+Frontend Engineer
+GitHub: https://github.com/Hizbullah3698
