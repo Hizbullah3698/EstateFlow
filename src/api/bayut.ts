@@ -3,7 +3,7 @@ import type { Property } from './mockData';
 import { MOCK_PROPERTIES } from './mockData';
 
 const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
-const RAPIDAPI_HOST = 'bayut.p.rapidapi.com';
+const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST || 'bayut.p.rapidapi.com';
 
 // Bayut API Response Interfaces
 interface BayutLocation {

@@ -1,100 +1,119 @@
-EstateFlow – Premium Dubai Real Estate Dashboard
+# EstateFlow – Premium Dubai Real Estate Dashboard
 
-EstateFlow is a modern, AI-enabled real estate dashboard designed for the Dubai property market. The platform focuses on performance, usability, and a premium user experience, allowing users to explore, compare, and analyze real estate listings efficiently using real-time data and intelligent assistance.
+EstateFlow is a modern, AI-enabled real estate dashboard tailored for the Dubai property market. It focuses on performance, usability, and a premium user experience, enabling users to explore, compare, and analyze property listings with real-time data and intelligent assistance.
 
-Screenshots
-Home Dashboard
+---
 
-Property Listings
+## 🚀 Live Demo
 
-AI Property Assistant
+👉 **Live URL:** [https://estate-flow-ochre.vercel.app/](https://estate-flow-ochre.vercel.app/)
 
-Property Comparison
+---
 
-Key Features
+## 📸 Screenshots
 
-AI-Powered Property Assistant
-Integrated with Google Gemini AI, enabling natural language property search, location-based queries, and personalized recommendations.
+### Home Dashboard
+![Home Dashboard](./screenshots/home.png)
 
-Real-Time Property Listings
-Uses the Bayut API (via RapidAPI) to display live property data for Dubai, ensuring accurate and up-to-date listings.
+### Property Listings
+![Property Listings](./screenshots/listings.png)
 
-Premium User Interface
-Built with React 19, Tailwind CSS, and Framer Motion to deliver smooth animations, responsive layouts, and a polished, professional UI.
+### AI Property Assistant
+![AI Property Assistant](./screenshots/ai-assistant.png)
 
-Property Comparison Tool
-Allows users to compare multiple properties side by side based on price, size, amenities, and key features.
+### Property Comparison
+![Property Comparison](./screenshots/comparison.png)
 
-Generative Data Engine
-Includes a custom data generator to create realistic demo properties, agent profiles, and metadata for development and presentation purposes.
+---
 
-Tech Stack
+## ✨ Features
 
-Frontend Framework: React 19 + Vite
+- **🤖 AI-Powered Assistant**  
+  - Integrated with **Google Gemini** to handle natural language queries, location-based searches, and personalized property recommendations.  
+  - Supports conversational flows to refine requirements such as budget, location, bedroom count, and amenities.
 
-Programming Language: TypeScript
+- **🏠 Real-Time Dubai Listings**  
+  - Uses the **Bayut Property API** via RapidAPI to fetch live, up-to-date property data for Dubai and across the UAE.  
+  - Provides rich listing details including price, location, size, images, and key metadata.
 
-Styling: Tailwind CSS
+- **💎 Premium User Interface**  
+  - Built with **React 19**, **Tailwind CSS**, and **Framer Motion** to deliver smooth animations, responsive layouts, and a polished dashboard experience.  
+  - Optimized for desktop viewing with adaptive behavior for various screen sizes.
 
-Animations: Framer Motion
+- **⚖️ Property Comparison Tool**  
+  - Compare multiple properties side by side by price, area, amenities, and other key attributes.  
+  - Designed for investors and agents who need to evaluate several options quickly.
 
-AI Integration: Google Gemini API
+- **⚙️ Generative Data Engine**  
+  - Includes a custom data generator for realistic demo properties, agents, and metadata using Faker.js.  
+  - Ideal for demos, offline development, and showcasing features without relying solely on external APIs.
 
-External Data Source: Bayut Property API (RapidAPI)
+---
 
-Icons: Lucide React
+## 🛠️ Tech Stack
 
-Local Setup & Installation
-Prerequisites
+- **Framework:** React 19 + Vite  
+- **Language:** TypeScript  
+- **Styling:** Tailwind CSS  
+- **Animations:** Framer Motion  
+- **AI:** Google Gemini API  
+- **Data Source:** Bayut Property API (via RapidAPI)  
+- **Icons:** Lucide React  
 
-Node.js (v18 or higher)
+---
 
-npm (included with Node.js)
+## 🚦 Getting Started
 
-Clone the Repository
-git clone https://github.com/Hizbullah3698/EstateFlow.git
-cd EstateFlow/real-estate-dashboard
+### Prerequisites
 
-Install Dependencies
-npm install
+- Node.js v18 or higher  
+- npm (comes bundled with Node.js)
 
-Environment Configuration
+### Installation
 
-Create a .env file in the real-estate-dashboard root directory and add:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Hizbullah3698/EstateFlow.git
+   cd EstateFlow/real-estate-dashboard
+   ```
 
-VITE_RAPIDAPI_KEY=your_bayut_api_key
-VITE_GEMINI_API_KEY=your_gemini_api_key
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
+3. **Environment Configuration**
+   Create a `.env` file in the `real-estate-dashboard` root directory and add your API keys:
+   ```env
+   VITE_RAPIDAPI_KEY=your_rapidapi_key_here
+   VITE_RAPIDAPI_HOST=bayut.p.rapidapi.com
+   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
 
-API keys can be obtained from:
+   > [!TIP]
+   > You can get your API keys from [RapidAPI (Bayut)](https://rapidapi.com/apidojo/api/bayut) and [Google AI Studio (Gemini)](https://aistudio.google.com/).
 
-RapidAPI (Bayut API)
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Google AI Studio (Gemini API)
+---
 
-Run the Development Server
-npm run dev
+## 📂 Project Structure
 
+```text
+src/
+ ├── api/          # API integration and data generation logic
+ ├── components/   # Reusable UI components
+ ├── context/      # Global state (chat, favorites, comparison)
+ ├── services/     # AI and external service integrations
+ ├── pages/        # Application routes and main views
+```
 
-The application will be available at http://localhost:5173.
+---
 
-Build for Production
-npm run build
+## 👨‍💻 Author
 
-Project Structure
-
-src/api – API integration and data generation logic
-
-src/components – Reusable UI components
-
-src/context – Global state management (Chat, Favorites, Comparison)
-
-src/services – AI and external service integrations
-
-src/pages – Application routes and main views
-
-Developed By
-
-Hizbullah
-Frontend Engineer
-GitHub: https://github.com/Hizbullah3698
+**Hizbullah** – Frontend Engineer  
+[GitHub](https://github.com/Hizbullah3698)
