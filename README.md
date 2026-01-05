@@ -2,6 +2,15 @@ EstateFlow – Premium Dubai Real Estate Dashboard
 
 EstateFlow is a modern, AI-enabled real estate dashboard designed for the Dubai property market. The platform focuses on performance, usability, and a premium user experience, allowing users to explore, compare, and analyze real estate listings efficiently using real-time data and intelligent assistance.
 
+Screenshots
+Home Dashboard
+
+Property Listings
+
+AI Property Assistant
+
+Property Comparison
+
 Key Features
 
 AI-Powered Property Assistant
@@ -40,7 +49,7 @@ Prerequisites
 
 Node.js (v18 or higher)
 
-npm (comes with Node.js)
+npm (included with Node.js)
 
 Clone the Repository
 git clone https://github.com/Hizbullah3698/EstateFlow.git
@@ -51,7 +60,7 @@ npm install
 
 Environment Configuration
 
-Create a .env file in the real-estate-dashboard root directory and add the following:
+Create a .env file in the real-estate-dashboard root directory and add:
 
 VITE_RAPIDAPI_KEY=your_bayut_api_key
 VITE_GEMINI_API_KEY=your_gemini_api_key
@@ -84,7 +93,8 @@ src/services – AI and external service integrations
 
 src/pages – Application routes and main views
 
-Developed by
+Developed By
+
 Hizbullah
 Frontend Engineer
 GitHub: https://github.com/Hizbullah3698
