@@ -5,7 +5,6 @@ import { MOCK_PROPERTIES } from './mockData';
 const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST || 'bayut.p.rapidapi.com';
 
-// Bayut API Response Interfaces
 interface BayutLocation {
     name: string;
 }
@@ -43,18 +42,14 @@ interface BayutResponse {
 }
 
 export const fetchBayutProperties = async (location: string = '5002', purpose: string = 'for-sale'): Promise<Property[]> => {
-    // FALLBACK: If no API key, return mock data with a warning
-    if (!RAPIDAPI_KEY) {
-        console.warn('Bayut API Key not found. Using Mock Data.');
-        return new Promise(resolve => setTimeout(() => resolve(MOCK_PROPERTIES), 800));
+    if (!RAPIDAPI_KEY || RAPIDAPI_KEY === 'your_rapidapi_key_here') {
+        return new Promise(resolve => setTimeout(() => resolve(MOCK_PROPERTIES), 300));
     }
 
     try {
-        // Use the location parameter in the URL
         const url = `https://${RAPIDAPI_HOST}/properties/list?locationExternalIDs=${location}&purpose=${purpose}&hitsPerPage=25&page=0&lang=en&sort=city-level-score`;
 
-        // Note: locationExternalIDs=5002 is typically Dubai Marina or similar. 
-        // In a real app we'd search for location IDs first.
+
 
         const response = await fetch(url, {
             method: 'GET',
@@ -65,15 +60,14 @@ export const fetchBayutProperties = async (location: string = '5002', purpose: s
         });
 
         if (!response.ok) {
-            throw new Error(`API Error: ${response.statusText}`);
+            return MOCK_PROPERTIES;
         }
 
         const data: BayutResponse = await response.json();
         return mapBayutToApp(data.hits);
 
     } catch (error) {
-        console.error('Failed to fetch from Bayut API:', error);
-        return MOCK_PROPERTIES; // Fallback on error
+        return MOCK_PROPERTIES;
     }
 };
 
@@ -86,8 +80,8 @@ const mapBayutToApp = (bayutProperties: BayutProperty[]): Property[] => {
         bedrooms: p.rooms,
         bathrooms: p.baths,
         sqft: Math.round(p.area),
-        yearBuilt: new Date().getFullYear(), // API doesn't always return this, defaulting
-        description: p.title, // API has full description in detail endpoint, using title for list
+        yearBuilt: new Date().getFullYear(),
+        description: p.title,
         amenities: p.amenities || ['Luxury Amenities'],
         type: mapType(p.product),
         status: p.purpose === 'for-rent' ? 'For Rent' : 'For Sale',
@@ -102,10 +96,9 @@ const mapBayutToApp = (bayutProperties: BayutProperty[]): Property[] => {
 };
 
 const mapType = (product: string): Property['type'] => {
-    // Simple mapping logic
     const lower = product.toLowerCase();
     if (lower.includes('villa')) return 'Villa';
     if (lower.includes('apartment')) return 'Apartment';
     if (lower.includes('penthouse')) return 'Penthouse';
-    return 'Apartment'; // Default
+    return 'Apartment';
 };

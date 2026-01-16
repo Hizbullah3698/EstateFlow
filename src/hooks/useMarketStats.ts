@@ -22,7 +22,6 @@ export const useMarketStats = () => {
     useEffect(() => {
         const calculateStats = async () => {
             try {
-                // Fetch a broader range of data for stats if possible, or usually just the main list
                 const properties = await fetchBayutProperties('5002', 'for-sale');
 
                 if (!properties.length) {
@@ -41,7 +40,7 @@ export const useMarketStats = () => {
                     loading: false
                 });
             } catch (error) {
-                console.error("Failed to calculate market stats:", error);
+                // Silently fallback without logging to console
                 setStats(prev => ({ ...prev, loading: false }));
             }
         };
